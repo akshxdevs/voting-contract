@@ -51,76 +51,546 @@ pub struct Poll {
 }
 ```
 
-**Usage**
----------
-
-### **Clone the Repo**
-
+Usage
+Clone the Repo
 bash
+Plain text
+ANTLR4
+Bash
+C
+C#
+CSS
+CoffeeScript
+CMake
+Dart
+Django
+Docker
+EJS
+Erlang
+Git
+Go
+GraphQL
+Groovy
+HTML
+Java
+JavaScript
+JSON
+JSX
+Kotlin
+LaTeX
+Less
+Lua
+Makefile
+Markdown
+MATLAB
+Markup
+Objective-C
+Perl
+PHP
+PowerShell
+.properties
+Protocol Buffers
+Python
+R
+Ruby
+Sass (Sass)
+Sass (Scss)
+Scheme
+SQL
+Shell
+Swift
+SVG
+TSX
+TypeScript
+WebAssembly
+YAML
+XML
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/akshxdevs/voting-contract.git  cd voting-contract   `
+git clone https://github.com/akshxdevs/voting-contract.git
+cd voting-contract
 
-### **Install Dependencies**
-
+Install Dependencies
 bash
+Plain text
+ANTLR4
+Bash
+C
+C#
+CSS
+CoffeeScript
+CMake
+Dart
+Django
+Docker
+EJS
+Erlang
+Git
+Go
+GraphQL
+Groovy
+HTML
+Java
+JavaScript
+JSON
+JSX
+Kotlin
+LaTeX
+Less
+Lua
+Makefile
+Markdown
+MATLAB
+Markup
+Objective-C
+Perl
+PHP
+PowerShell
+.properties
+Protocol Buffers
+Python
+R
+Ruby
+Sass (Sass)
+Sass (Scss)
+Scheme
+SQL
+Shell
+Swift
+SVG
+TSX
+TypeScript
+WebAssembly
+YAML
+XML
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   yarn install   `
+yarn install
 
-### **Build the Project**
-
+Build the Project
 bash
+Plain text
+ANTLR4
+Bash
+C
+C#
+CSS
+CoffeeScript
+CMake
+Dart
+Django
+Docker
+EJS
+Erlang
+Git
+Go
+GraphQL
+Groovy
+HTML
+Java
+JavaScript
+JSON
+JSX
+Kotlin
+LaTeX
+Less
+Lua
+Makefile
+Markdown
+MATLAB
+Markup
+Objective-C
+Perl
+PHP
+PowerShell
+.properties
+Protocol Buffers
+Python
+R
+Ruby
+Sass (Sass)
+Sass (Scss)
+Scheme
+SQL
+Shell
+Swift
+SVG
+TSX
+TypeScript
+WebAssembly
+YAML
+XML
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   anchor build   `
+anchor build
 
-### **Test the Project**
-
+Test the Project
 bash
+Plain text
+ANTLR4
+Bash
+C
+C#
+CSS
+CoffeeScript
+CMake
+Dart
+Django
+Docker
+EJS
+Erlang
+Git
+Go
+GraphQL
+Groovy
+HTML
+Java
+JavaScript
+JSON
+JSX
+Kotlin
+LaTeX
+Less
+Lua
+Makefile
+Markdown
+MATLAB
+Markup
+Objective-C
+Perl
+PHP
+PowerShell
+.properties
+Protocol Buffers
+Python
+R
+Ruby
+Sass (Sass)
+Sass (Scss)
+Scheme
+SQL
+Shell
+Swift
+SVG
+TSX
+TypeScript
+WebAssembly
+YAML
+XML
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   anchor test   `
+anchor test
 
-**Example Flow**
-----------------
+Example Flow
+text
+Plain text
+ANTLR4
+Bash
+C
+C#
+CSS
+CoffeeScript
+CMake
+Dart
+Django
+Docker
+EJS
+Erlang
+Git
+Go
+GraphQL
+Groovy
+HTML
+Java
+JavaScript
+JSON
+JSX
+Kotlin
+LaTeX
+Less
+Lua
+Makefile
+Markdown
+MATLAB
+Markup
+Objective-C
+Perl
+PHP
+PowerShell
+.properties
+Protocol Buffers
+Python
+R
+Ruby
+Sass (Sass)
+Sass (Scss)
+Scheme
+SQL
+Shell
+Swift
+SVG
+TSX
+TypeScript
+WebAssembly
+YAML
+XML
+
+1. Creator calls initialize
+   → Poll: "Yes" (0), "No" (1), "Abstain" (2)
+
+
+2. Alice calls vote(0) → Yes: 1
+   Bob calls vote(1)   → No: 1
+   Charlie calls vote(0) → Yes: 2
+
+
+3. Real-time: Read poll account → [2, 1, 0]
+
+
+4. After deadline → Anyone calls close()
+   → Emits CloseEvent with [2, 1, 0]
+   → Results are final & verifiable
+
+Live vote counting during active period
+Immutable & verifiable results on-chain
+
+Key Files
+text
+Plain text
+ANTLR4
+Bash
+C
+C#
+CSS
+CoffeeScript
+CMake
+Dart
+Django
+Docker
+EJS
+Erlang
+Git
+Go
+GraphQL
+Groovy
+HTML
+Java
+JavaScript
+JSON
+JSX
+Kotlin
+LaTeX
+Less
+Lua
+Makefile
+Markdown
+MATLAB
+Markup
+Objective-C
+Perl
+PHP
+PowerShell
+.properties
+Protocol Buffers
+Python
+R
+Ruby
+Sass (Sass)
+Sass (Scss)
+Scheme
+SQL
+Shell
+Swift
+SVG
+TSX
+TypeScript
+WebAssembly
+YAML
+XML
+
+programs/voting-contract/src/lib.rs
+
+Anchor program entrypoint and instruction routing
 
 text
+Plain text
+ANTLR4
+Bash
+C
+C#
+CSS
+CoffeeScript
+CMake
+Dart
+Django
+Docker
+EJS
+Erlang
+Git
+Go
+GraphQL
+Groovy
+HTML
+Java
+JavaScript
+JSON
+JSX
+Kotlin
+LaTeX
+Less
+Lua
+Makefile
+Markdown
+MATLAB
+Markup
+Objective-C
+Perl
+PHP
+PowerShell
+.properties
+Protocol Buffers
+Python
+R
+Ruby
+Sass (Sass)
+Sass (Scss)
+Scheme
+SQL
+Shell
+Swift
+SVG
+TSX
+TypeScript
+WebAssembly
+YAML
+XML
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   1. Creator calls initialize     → Poll: "Yes" (0), "No" (1), "Abstain" (2)  2. Alice calls vote(0) → Yes: 1     Bob calls vote(1)   → No: 1     Charlie calls vote(0) → Yes: 2  3. Real-time: Read poll account → [2, 1, 0]  4. After deadline → Anyone calls close()     → Emits CloseEvent with [2, 1, 0]     → Results are final & verifiable   `
+programs/voting-contract/src/instructions/
 
-> **Live vote counting** during active period**Immutable & verifiable** results on-chain
-
-**Key Files**
--------------
+initialize.rs
+vote.rs
+close.rs
 
 text
+Plain text
+ANTLR4
+Bash
+C
+C#
+CSS
+CoffeeScript
+CMake
+Dart
+Django
+Docker
+EJS
+Erlang
+Git
+Go
+GraphQL
+Groovy
+HTML
+Java
+JavaScript
+JSON
+JSX
+Kotlin
+LaTeX
+Less
+Lua
+Makefile
+Markdown
+MATLAB
+Markup
+Objective-C
+Perl
+PHP
+PowerShell
+.properties
+Protocol Buffers
+Python
+R
+Ruby
+Sass (Sass)
+Sass (Scss)
+Scheme
+SQL
+Shell
+Swift
+SVG
+TSX
+TypeScript
+WebAssembly
+YAML
+XML
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   programs/voting-contract/src/lib.rs   `
+programs/voting-contract/src/state.rs
 
-> Anchor program entrypoint and instruction routing
+Poll struct and account definitions
 
 text
+Plain text
+ANTLR4
+Bash
+C
+C#
+CSS
+CoffeeScript
+CMake
+Dart
+Django
+Docker
+EJS
+Erlang
+Git
+Go
+GraphQL
+Groovy
+HTML
+Java
+JavaScript
+JSON
+JSX
+Kotlin
+LaTeX
+Less
+Lua
+Makefile
+Markdown
+MATLAB
+Markup
+Objective-C
+Perl
+PHP
+PowerShell
+.properties
+Protocol Buffers
+Python
+R
+Ruby
+Sass (Sass)
+Sass (Scss)
+Scheme
+SQL
+Shell
+Swift
+SVG
+TSX
+TypeScript
+WebAssembly
+YAML
+XML
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   programs/voting-contract/src/instructions/   `
+tests/voting-contract.ts
 
-*   initialize.rs
-    
-*   vote.rs
-    
-*   close.rs
-    
+Full integration tests with mock voters and edge cases
 
-text
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   programs/voting-contract/src/state.rs   `
 
-> Poll struct and account definitions
 
-text
+**Events**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   tests/voting-contract.ts   `
-
-> Full integration tests with mock voters and edge cases
-
-**Events**| Event | Description ||--------------------|-------------|| \`InitializeEvent\` | Emitted on poll creation\`creator\`, \`title\`, \`end\_time\`, \`option\_count\` || \`VoteEvent\` | Emitted on each vote\`voter\`, \`option\_index\` || \`CloseEvent\` | Emitted on poll close\`final\_votes: Vec\` |
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Event              | Description |
+|--------------------|-------------|
+| `InitializeEvent`  | Emitted on poll creation<br>`creator`, `title`, `end_time`, `option_count` |
+| `VoteEvent`        | Emitted on each vote<br>`voter`, `option_index` |
+| `CloseEvent`       | Emitted on poll close<br>`final_votes: Vec<u64>` |
 
 **Requirements**
 ----------------
