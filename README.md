@@ -51,6 +51,106 @@ pub struct Poll {
 }
 ```
 
+**Usage**
+---------
+
+### **Clone the Repo**
+
+bash
+
+```
+git clone https://github.com/akshxdevs/voting-contract.git
+cd voting-contract
+```
+
+### **Install Dependencies**
+
+bash
+
+```
+yarn install
+```
+
+### **Build the Project**
+
+bash
+
+```
+anchor build
+```
+
+### **Test the Project**
+
+bash
+
+```
+anchor test
+```
+
+* * * * *
+
+**Example Flow**
+----------------
+
+text
+
+```
+1\. Creator calls initialize
+   → Poll: "Yes" (0), "No" (1), "Abstain" (2)
+
+2. Alice calls vote(0) → Yes: 1
+   Bob calls vote(1)   → No: 1
+   Charlie calls vote(0) → Yes: 2
+
+3. Real-time: Read poll account → [2, 1, 0]
+
+4. After deadline → Anyone calls close()
+   → Emits CloseEvent with [2, 1, 0]
+   → Results are final & verifiable
+```
+
+> **Live vote counting** during active period **Immutable & verifiable** results on-chain
+
+* * * * *
+
+**Key Files**
+-------------
+
+text
+
+```
+programs/voting-contract/src/lib.rs
+```
+
+> Anchor program entrypoint and instruction routing
+
+text
+
+```
+programs/voting-contract/src/instructions/
+```
+
+-   initialize.rs
+-   vote.rs
+-   close.rs
+
+text
+
+```
+programs/voting-contract/src/state.rs
+```
+
+> Poll struct and account definitions
+
+text
+
+```
+tests/voting-contract.ts
+```
+
+> Full integration tests with mock voters and edge cases
+
+
 **Events**
 
 | Event              | Description |
