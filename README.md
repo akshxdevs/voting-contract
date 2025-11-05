@@ -51,91 +51,90 @@ pub struct Poll {
 }
 ```
 
-Usage
-Clone the Repo
+**Usage**
+---------
 
-bashgit clone https://github.com/akshxdevs/voting-contract.git
-cd voting-contract
-Install Dependencies
-bashyarn install
-Build the Project
-bashanchor build
-Test the Project
-bashanchor test
+### **Clone the Repo**
 
-Example Flow
+bash
 
-Creator calls initialize → poll with "Yes", "No", "Abstain"
-Voters call vote(0) → increments count for first option
-Real-time tracking via poll account
-After deadline → close() emits final tally
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/akshxdevs/voting-contract.git  cd voting-contract   `
 
+### **Install Dependencies**
 
-Live vote counting during active period
-Immutable & verifiable results on-chain
+bash
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   yarn install   `
 
-Key Files
+### **Build the Project**
 
-programs/voting-contract/src/lib.rs
-Anchor program entrypoint and instruction routing
-programs/voting-contract/src/instructions/
+bash
 
-initialize.rs
-vote.rs
-close.rs
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   anchor build   `
 
+### **Test the Project**
 
-programs/voting-contract/src/state.rs
-Poll struct and account definitions
-tests/voting-contract.ts
-Full integration tests with mock voters and edge cases
+bash
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   anchor test   `
 
-Events
+**Example Flow**
+----------------
 
+text
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   1. Creator calls initialize     → Poll: "Yes" (0), "No" (1), "Abstain" (2)  2. Alice calls vote(0) → Yes: 1     Bob calls vote(1)   → No: 1     Charlie calls vote(0) → Yes: 2  3. Real-time: Read poll account → [2, 1, 0]  4. After deadline → Anyone calls close()     → Emits CloseEvent with [2, 1, 0]     → Results are final & verifiable   `
 
+> **Live vote counting** during active period**Immutable & verifiable** results on-chain
 
+**Key Files**
+-------------
 
+text
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   programs/voting-contract/src/lib.rs   `
 
+> Anchor program entrypoint and instruction routing
 
+text
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   programs/voting-contract/src/instructions/   `
 
+*   initialize.rs
+    
+*   vote.rs
+    
+*   close.rs
+    
 
+text
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   programs/voting-contract/src/state.rs   `
 
+> Poll struct and account definitions
 
+text
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   tests/voting-contract.ts   `
 
+> Full integration tests with mock voters and edge cases
 
+**Events**| Event | Description ||--------------------|-------------|| \`InitializeEvent\` | Emitted on poll creation\`creator\`, \`title\`, \`end\_time\`, \`option\_count\` || \`VoteEvent\` | Emitted on each vote\`voter\`, \`option\_index\` || \`CloseEvent\` | Emitted on poll close\`final\_votes: Vec\` |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+**Requirements**
+----------------
 
+*   **Node.js ≥ 18**
+    
+*   **Yarn**
+    
+*   **Solana CLI**
+    
+*   avm install latest && avm use latest
+    
 
+**License**
+-----------
 
-EventDescriptionInitializeEventEmitted on poll creation (creator, title, end_time)VoteEventEmitted on each vote (voter, option_index)CloseEventEmitted on poll close (final vote counts)
-
-Requirements
-
-Node.js ≥ 18
-Yarn
-Solana CLI
-Anchor CLI
-bashavm install latest && avm use latest
-
-
-
-License
-MIT
-
-
-GitHub automatically detects and renders any file named README.md at the root of a repository.
-This file uses standard Markdown syntax (.md) and will be rendered with:
-
-Headings (#, ##)
-Code blocks (bash ... )
-Tables
-Bold / Italic
-Lists
-Blockquotes
+**MIT**
